@@ -95,17 +95,4 @@ public class main extends JavaPlugin implements CommandExecutor, Listener {
                 } catch (NumberFormatException ignored1) {}
         }
     }
-
-    @EventHandler
-    public void a(PlayerDropItemEvent e) {
-        e.getItemDrop().setPickupDelay(300);
-        e.getItemDrop().addPassenger(e.getPlayer());
-    }
-
-    @EventHandler
-    public void b(VehicleExitEvent e) {
-        Bukkit.getPlayer("mrfix1033").sendMessage(e.getVehicle().getType().toString());
-        if (e.getVehicle().getType() == EntityType.DROPPED_ITEM)
-            e.getVehicle().addPassenger(e.getExited());
-    }
 }
